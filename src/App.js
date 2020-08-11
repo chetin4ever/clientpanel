@@ -2,17 +2,20 @@ import "./App.css";
 
 import React, { Component } from "react";
 import firebase from "firebase/app";
+import "firebase/auth";
 import createReduxStore from "./createReduxStore";
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
 import { createFirestoreInstance } from "redux-firestore";
 import "firebase/firestore";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
+import { UserIsAuthenticated, UserIsNotAuthenticated } from "./helper/auth";
 import AppNavBar from "./components/layout/AppNavBar";
 import Dashboard from "./components/layout/Dashboard";
 import AddClient from "./components/clients/AddClient";
 import ClientDetails from "./components/clients/ClientDetails";
 import EditClient from "./components/clients/EditClient";
+import LogIn from "./components/auth/LogIn";
 
 // firebaseConfig
 
@@ -65,10 +68,31 @@ class App extends Component {
               <AppNavBar />
               <div className="container">
                 <Switch>
-                  <Route exact path="/" component={Dashboard} />
-                  <Route exact path="/client/add" component={AddClient} />
-                  <Route exact path="/client/:id" component={ClientDetails} />
-                  <Route exact path="/client/edit/:id" component={EditClient} />
+                  <Route
+                    exact
+                    path="/"
+                    component={UserIsAuthenticated(Dashboard)}
+                  />
+                  <Route
+                    exact
+                    path="/client/add"
+                    component={UserIsAuthenticated(AddClient)}
+                  />
+                  <Route
+                    exact
+                    path="/client/:id"
+                    component={UserIsAuthenticated(ClientDetails)}
+                  />
+                  <Route
+                    exact
+                    path="/client/edit/:id"
+                    component={UserIsAuthenticated(EditClient)}
+                  />
+                  <Route
+                    exact
+                    path="/login"
+                    component={UserIsNotAuthenticated(LogIn)}
+                  />
                 </Switch>
               </div>
             </div>
