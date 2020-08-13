@@ -84,8 +84,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
     <code>npm i redux react-redux react-redux-firebase redux-firebase</code>
     <h3>creating root reducer and store</h3>
     <h2>rootreducer.js</h2>
-    
-
 
     </body>
 
@@ -95,4 +93,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
         import { firebaseReducer } from 'react-redux-firebase'
         // import { firestoreReducer } from 'redux-firestore' // <- needed if using firestore // Add firebase to
             reducers export default combineReducers({ firebase: firebaseReducer, // firestore: firestoreReducer // <-
-            needed if using firestore })```
+            needed if using firestore })
+```
