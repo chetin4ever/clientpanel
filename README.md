@@ -71,4 +71,15 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ### install redux react-redux react-redux-firebase
 
-npm i redux react-redux react-redux-firebase redux-firebase
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rewact Redux firebase v3 Setup</title>
+</head>
+<body>
+    <h1>installing react-redux-firebase</h1>
+    <code>npm i redux react-redux react-redux-firebase redux-firebase</code>
+</body>
+</html>
