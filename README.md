@@ -85,7 +85,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
     <h3>creating root reducer and store</h3>
     <h2>rootreducer.js</h2>
 
-    </body>
+</body>
 
 </html>
 ```javascript
