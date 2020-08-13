@@ -16,6 +16,8 @@ import AddClient from "./components/clients/AddClient";
 import ClientDetails from "./components/clients/ClientDetails";
 import EditClient from "./components/clients/EditClient";
 import LogIn from "./components/auth/LogIn";
+import Settings from "./components/settings/Settings";
+import Register from "./components/auth/Register";
 
 // firebaseConfig
 
@@ -92,6 +94,16 @@ class App extends Component {
                     exact
                     path="/login"
                     component={UserIsNotAuthenticated(LogIn)}
+                  />
+                  <Route
+                    exact
+                    path="/register"
+                    component={UserIsNotAuthenticated(Register)}
+                  />
+                  <Route
+                    exact
+                    path="/settings"
+                    component={UserIsAuthenticated(Settings)}
                   />
                 </Switch>
               </div>

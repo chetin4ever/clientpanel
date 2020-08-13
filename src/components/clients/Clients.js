@@ -37,7 +37,7 @@ class Clients extends Component {
     // ];
     const { clients } = this.props;
     const { totalOwed } = this.state;
-    console.log(clients);
+    //console.log(clients);
     if (clients) {
       return (
         <div className="row">
